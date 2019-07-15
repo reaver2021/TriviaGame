@@ -91,8 +91,9 @@ $(document).ready(function() {
         for(var i = 0; i < options.length; i++){
         holder.push(options[i]);
     }
-            })
+})
 
+            
     //Timer start
     function runTimer(){
         if (!running){
@@ -129,6 +130,12 @@ $(document).ready(function() {
         pick = options[index];
 
     
+//	if (pick.shown) {
+//		//recursive to continue to generate new index until one is chosen that has not shown in this game yet
+//		displayQuestion();
+//  } else {
+//		console.log(pick.question);
+		//iterate through answer array and display
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
         for(var i = 0; i < pick.choice.length; i++){
             var userChoice = $("<div>");
@@ -137,6 +144,7 @@ $(document).ready(function() {
             //assign array position to it so you can check the answer
             userChoice.attr("data-guessvalue", i);
             $("#answerblock").append(userChoice);
+            
         }
     
     }
@@ -159,6 +167,7 @@ $(document).ready(function() {
             $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
             hidepicture();
         }
+        
     })
 
     
