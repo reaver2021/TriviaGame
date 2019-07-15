@@ -165,36 +165,36 @@ $(document).ready(function() {
         }
     })
 
+function hidepicture(){
+    $("#answerblock").append("<img src=" + pick.photo + ">");
+    newArray.push(pick);
+    options.splice(index,1);
 
+    var hidpic = setTimeout(function() {
+        $("#answerblock").empty();
+        timer = 20;
 
+    //run the score screen if all questions answered
+    if ((wrongCount + correctCount + unanswerCount) === qCount) {
+        $("#questionblock").empty();
+        $("#questionblock").html("<h3>Game Over! Here's how you did: </h3>");
+        $("#answerblock").append("<h4> Correct: " + correctCount + "</h4>" );
+        $("#answerblock").append("<h4> Incorrect: " + wrongCount + "</h4>");
+        $("#answerblock").append("<h4> Unanswered: " + unanswerCount + "</h4>");
+        $("#reset").show();
+        correctCount = 0;
+        wrongCount = 0;
+        unanswerCount = 0;
 
+    } else {
+        runTimer();
+        displayQuestion();
 
+    }
+    }, 3000);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$
 
 
 })
