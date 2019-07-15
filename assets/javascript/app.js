@@ -29,14 +29,14 @@ $(document).ready(function() {
         },
 
         {
-            question: "Who is the Marvel Chaaracter that has been resurrected the most?",
+            question: "Who is the Marvel Character that has been resurrected the most?",
             choice: ["Jean Grey", "Daredevil", "Namor", "Star Lord"],
             answer: 0,
             photo: "assets/images/jean.jpg"
         },
 
         {
-            question: "Who is the one charachter who has never been resurrected?",
+            question: "Who is the one character who has never been resurrected?",
             choice: ["Wolverine", "Iron Man", "Captain America", "Uncle Ben"],
             answer: 3,
             photo: "assets/images/ben.jpg"
