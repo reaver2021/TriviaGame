@@ -194,7 +194,16 @@ function hidepicture(){
     }, 3000);
 }
 
-$
+$("#reset").on("click", function(){
+    $("#reset").hide();
+    $("#answerblock").empty();
+    $("#questionblock").empty();
+    for(var i = 0; i < holder.length; i ++) {
+        options.push(holder[i])
+    }
+    runTimer();
+    displayQuestion();
+})
 
 
 })
