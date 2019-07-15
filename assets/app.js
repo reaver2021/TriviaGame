@@ -83,4 +83,118 @@ $(document).ready(function() {
     var holder = [];
 
     $("#reset").hide();
+    //Click the start button to start, obviously!
+    $("#start").on("click", function (){
+        $("#start").hide();
+        displayQuestion();
+        runTimer();
+        for(var i = 0; i < questions.length; i++){
+            holder.push(opstions[i]);
+        }
+    })
+
+    //Timer start
+    function runTimer(){
+        if (!running){
+            intervalId = setInterval(decrement, 1000);
+            running = true;
+        }
+    }
+
+    //Timer Countdown
+    function decrement(){
+        $("#timeleft").html("<h3>Time Remaining: " + timer + "</h3>");
+        timer --;
+
+        //Stop Timer if it reaches 0
+        if (timer === 0) {
+            unanswerCount++;
+            stop();
+            $("#answerblock").html("<p>*snaps* Your Time Is Up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+            hidepicture();
+        }
+    }
+
+    //Timer Stop
+    function stop(){
+        running = false;
+        clearInterval(intervalId);
+    }
+
+    //Randomly pick a question in array if not already shown
+    //Display a question and loop through and display possible answers
+    function displayQuestion(){
+        //Generate random index in array
+        index = Math.floor(Math.random()*PushSubscriptionOptions.length);
+        pick = options[index];
+
+    // if (pick.shown) {
+        //recursive to continue to generate new index until one is chosen that has not shown in this game yet
+        //displayQuestion();
+    //} else {
+    //    console.log(pick.question);
+        //iterate through answer array and display
+        $("#questionblock").html("<h2>" + pick.question + "</h2>");
+        for(var i = 0; i < pick.choice.length; i++){
+            var userChoice = $("<div>");
+            userChoice.addClass("answerchoice");
+            userChoice.html(pick.choice[i]);
+            //assign array position to it so you can check the answer
+            userChoice.attr("data-guessvalue", i);
+            $("#answerblock").append(userChoice);
+        }
+    //}
+    }
+
+    $(".answerchoice").on("click", function(){
+        //grab array position from userGuess
+        userGuess = parseInt($(this).attr("data-guessvalue"));
+
+        if (userGuess === pick.answer) {
+            stop();
+            correctCount++;
+            userGuess="";
+            $("#answerblock").html("<p>Correct!</p>");
+            hidepicture();
+        } else {
+            stop();
+            wrongCount++;
+            userGuess="";
+            $("#answerblock").html("<p>Wrong! The correct answer is: " + pick.choice[pick.answer] + "</p>");
+            hidepicture();
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
