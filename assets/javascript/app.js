@@ -138,7 +138,7 @@ $(document).ready(function() {
             userChoice.attr("data-guessvalue", i);
             $("#answerblock").append(userChoice);
         }
-    //}
+    
     }
 
     $(".answerchoice").on("click", function(){
@@ -160,6 +160,7 @@ $(document).ready(function() {
             hidepicture();
         }
     })
+
     
 
 function hidepicture(){
