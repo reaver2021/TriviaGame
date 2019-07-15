@@ -1,70 +1,70 @@
 $(document).ready(function() {
-    var questions = [
+    var options = [
         {
             question: "Steve Rogers, aka Captain America, hails from what part of New York?",
-            choice: ["Queens, Brooklyn, Upper East Side, Manhatten"],
+            choice: ["Queens", "Brooklyn", "Upper East Side", "Manhattan"],
             answer: 1,
             photo: "assets/images/captain.jpg"
         },
 
         {
             question: "What is Black Panther's suit and Captain America's shield made out of?",
-            choice: ["Steel, Titanium, Unobtanium, Vibranium"],
+            choice: ["Steel", "Titanium", "Unobtanium", "Vibranium"],
             answer: 3,
             photo: "assets/images/panther.jpg"
         },
 
         {
             question: "What is the name of Thor's Hammer?",
-            choice: ["Mjolnir, Stormbreaker, Leviathan, Hammer McHammerson"],
+            choice: ["Mjolnir", "Stormbreaker", "Leviathan", "Hammer McHammerson"],
             answer: 0,
             photo: "assets/images/thor.gif"
         },
 
         {
             question: "Who owes Moon Knight money?",
-            choice: ["Thor, Iron Man, Dracula, Hulk"],
+            choice: ["Thor", "Iron Man", "Dracula", "Hulk"],
             answer: 2,
             photo: "assets/images/moon.jpg"
         },
 
         {
             question: "Who is the Marvel Chaaracter that has been resurrected the most?",
-            choice: ["Jean Grey, Daredevil, Namor, Star Lord"],
+            choice: ["Jean Grey", "Daredevil", "Namor", "Star Lord"],
             answer: 0,
             photo: "assets/images/jean.jpg"
         },
 
         {
             question: "On the other hand, who is the one charachter who has never been resurrected?",
-            choice: ["Wolverine, Iron Man, Captain America, Uncle Ben"],
+            choice: ["Wolverine", "Iron Man", "Captain America", "Uncle Ben"],
             answer: 3,
             photo: "assets/images/ben.jpg"
         },
 
         {
             question: "Who attacked Red Skull after finding out he was a Nazi?",
-            choice: ["Wolverine, Captain America, Magneto, Joker"],
+            choice: ["Wolverine", "Captain America", "Magneto", "Joker"],
             answer: 3,
             photo: "assets/images/joker.png"
         },
 
         {
             question: "Who cameo'd as Loki in Thor Ragnarock?",
-            choice: ["Ben Affleck, Matt Damon, Jimmy Fallon, Jimmy Kimmel"],
+            choice: ["Ben Affleck", "Matt Damon", "Jimmy Fallon", "Jimmy Kimmel"],
             answer: 1,
             photo:"assets/images/matt.png"
         },
 
         {
             question: "How long was Loki falling in Dr.Strange's portal?",
-            choice: ["10 Mins, 20 Mins, 30 Mins, 4 Years"],
+            choice: ["10 Mins", "20 Mins", "30 Mins", "4 Years"],
             answer: 2,
             photo:"assets/images/lokiFalling.gif"
         },
         {
             question: "Who is the true Strongest Avenger?",
-            choice: ["Hulk, Thor, Captain America, Iron Man"],
+            choice: ["Hulk", "Thor", "Captain America", "Iron Man"],
             answer: 1,
             photo: "assets/images/point.jpg"
         }];
@@ -76,7 +76,7 @@ $(document).ready(function() {
     var intervalId;
     var userGuess ="";
     var running = false;
-    var qCount = questions.length;
+    var qCount = options.length;
     var pick;
     var index;
     var newArray = [];
@@ -88,10 +88,10 @@ $(document).ready(function() {
         $("#start").hide();
         displayQuestion();
         runTimer();
-        for(var i = 0; i < questions.length; i++){
-            holder.push(opstions[i]);
+        for(var i = 0; i < options.length; i++){
+    holder.push(options[i]);
         }
-    })
+            })
 
     //Timer start
     function runTimer(){
@@ -125,14 +125,14 @@ $(document).ready(function() {
     //Display a question and loop through and display possible answers
     function displayQuestion(){
         //Generate random index in array
-        index = Math.floor(Math.random()*PushSubscriptionOptions.length);
+        index = Math.floor(Math.random()*options.length);
         pick = options[index];
 
-    // if (pick.shown) {
+     //if (pick.shown) {
         //recursive to continue to generate new index until one is chosen that has not shown in this game yet
         //displayQuestion();
     //} else {
-    //    console.log(pick.question);
+        //console.log(pick.question);
         //iterate through answer array and display
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
         for(var i = 0; i < pick.choice.length; i++){
@@ -164,6 +164,7 @@ $(document).ready(function() {
             hidepicture();
         }
     })
+
 
 function hidepicture(){
     $("#answerblock").append("<img src=" + pick.photo + ">");
