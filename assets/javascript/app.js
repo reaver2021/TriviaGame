@@ -36,7 +36,7 @@ $(document).ready(function() {
         },
 
         {
-            question: "On the other hand, who is the one charachter who has never been resurrected?",
+            question: "Who is the one charachter who has never been resurrected?",
             choice: ["Wolverine", "Iron Man", "Captain America", "Uncle Ben"],
             answer: 3,
             photo: "assets/images/ben.jpg"
@@ -50,7 +50,7 @@ $(document).ready(function() {
         },
 
         {
-            question: "Who cameo'd as Loki in Thor Ragnarock?",
+            question: "Who cameo'd as Loki in Thor: Ragnarock?",
             choice: ["Ben Affleck", "Matt Damon", "Jimmy Fallon", "Jimmy Kimmel"],
             answer: 1,
             photo:"assets/images/matt.png"
@@ -89,8 +89,8 @@ $(document).ready(function() {
         displayQuestion();
         runTimer();
         for(var i = 0; i < options.length; i++){
-    holder.push(options[i]);
-        }
+        holder.push(options[i]);
+    }
             })
 
     //Timer start
@@ -156,6 +156,7 @@ $(document).ready(function() {
             userGuess="";
             $("#answerblock").html("<p>Correct!</p>");
             hidepicture();
+
         } else {
             stop();
             wrongCount++;
@@ -164,7 +165,7 @@ $(document).ready(function() {
             hidepicture();
         }
     })
-
+    
 
 function hidepicture(){
     $("#answerblock").append("<img src=" + pick.photo + ">");
