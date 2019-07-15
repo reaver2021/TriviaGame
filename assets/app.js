@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var options = [
+    var questions = [
         {
             question: "Steve Rogers, aka Captain America, hails from what part of New York?",
             choice: ["Queens, Brooklyn, Upper East Side, Manhatten"],
@@ -63,8 +63,24 @@ $(document).ready(function() {
             photo:"assets/images/lokiFalling.gif"
         },
         {
-            
-        }
+            question: "Who is the true Strongest Avenger?",
+            choice: ["Hulk, Thor, Captain America, Iron Man"],
+            answer: 1,
+            photo: "assets/images/point.jpg"
+        }];
+    
+    var correctCount = 0;
+    var wrongCount = 0;
+    var unanswerCount = 0;
+    var timer = 20;
+    var intervalId;
+    var userGuess ="";
+    var running = false;
+    var qCount = questions.length;
+    var pick;
+    var index;
+    var newArray = [];
+    var holder = [];
 
-    ]
-}
+    $("#reset").hide();
+})
