@@ -174,7 +174,7 @@ function hidepicture(){
 
     var hidpic = setTimeout(function() {
         $("#answerblock").empty();
-        timer = 30;
+        timer = 20;
 
     //run the score screen if all questions answered
     if ((wrongCount + correctCount + unanswerCount) === qCount) {
