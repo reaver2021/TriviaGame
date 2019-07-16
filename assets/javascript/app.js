@@ -50,7 +50,7 @@ $(document).ready(function() {
         },
 
         {
-            question: "Who cameo'd as Loki in Thor: Ragnarock?",
+            question: "Who cameo'd as Loki in Thor: Ragnarok?",
             choice: ["Ben Affleck", "Matt Damon", "Jimmy Fallon", "Jimmy Kimmel"],
             answer: 1,
             photo:"assets/images/matt.png"
