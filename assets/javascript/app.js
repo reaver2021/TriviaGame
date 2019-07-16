@@ -72,7 +72,7 @@ $(document).ready(function() {
     var correctCount = 0;
     var wrongCount = 0;
     var unanswerCount = 0;
-    var timer = 20;
+    var timer = 10;
     var intervalId;
     var userGuess ="";
     var running = false;
@@ -174,7 +174,7 @@ function hidepicture(){
 
     var hidpic = setTimeout(function() {
         $("#answerblock").empty();
-        timer = 20;
+        timer = 10;
 
     //run the score screen if all questions answered
     if ((wrongCount + correctCount + unanswerCount) === qCount) {
@@ -193,7 +193,7 @@ function hidepicture(){
         displayQuestion();
 
     }
-    }, 3000);
+    }, 7000);
 }
 
 $("#reset").on("click", function(){
