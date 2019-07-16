@@ -130,12 +130,7 @@ $(document).ready(function() {
         pick = options[index];
 
     
-//	if (pick.shown) {
-//		//recursive to continue to generate new index until one is chosen that has not shown in this game yet
-//		displayQuestion();
-//  } else {
-//		console.log(pick.question);
-		//iterate through answer array and display
+
         $("#questionblock").html("<h2>" + pick.question + "</h2>");
         for(var i = 0; i < pick.choice.length; i++){
             var userChoice = $("<div>");
@@ -145,9 +140,9 @@ $(document).ready(function() {
             userChoice.attr("data-guessvalue", i);
             $("#answerblock").append(userChoice);
             
-        }
+    //    }
     
-    }
+}
 
     $(".answerchoice").on("click", function(){
         //grab array position from userGuess
@@ -169,7 +164,7 @@ $(document).ready(function() {
         }
         
     })
-
+}
     
 
 function hidepicture(){
