@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/reaver2021/TriviaGame/issues"
   },
-  "homepage": "https://github.com/reaver2021/TriviaGame#readme"
+  "homepage": "https://github.com/reaver2021/TriviaGame#readme",
+  "dependencies": {
+    "heroku": "^7.35.0"
+  }
 }
