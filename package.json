@@ -1,0 +1,20 @@
+{
+  "name": "triviagame",
+  "version": "1.0.0",
+  "description": "Overview\r Created a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. 10 questions randomly generated with countdown timer for answer. App gives correct answer with gif/image after user guess. After 10 questions, app will display score with the option to restart the game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "engines": "10.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reaver2021/TriviaGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reaver2021/TriviaGame/issues"
+  },
+  "homepage": "https://github.com/reaver2021/TriviaGame#readme"
+}
